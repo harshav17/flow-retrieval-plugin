@@ -16,7 +16,7 @@ Setup Weaviate Locally
 Run `docker-compose up -d && docker-compose logs -f weaviate`
 
 Run Flow-gpt app
-Install pyenv
-run `pyenv install 3.10.11`
-Open new shell
-Follow instructions in https://github.com/harshav17/flow-retrieval-plugin#quickstart
+- Install pyenv
+- run `pyenv install 3.10.11`
+- Open new shell
+- Follow instructions in https://github.com/harshav17/flow-retrieval-plugin#quickstart
