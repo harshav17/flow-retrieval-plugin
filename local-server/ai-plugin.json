@@ -1,9 +1,9 @@
 {
   "schema_version": "v1",
-  "name_for_model": "retrieval",
+  "name_for_model": "flowplugin",
   "name_for_human": "Flow Plugin",
-  "description_for_model": "Plugin for retrieving existing sample flows. Use this whenever user requests the generation of a flow. Use the retrieved sample flow as a template to generate the new flow based on the user input.",
-  "description_for_human": "Generate a new flows.",
+  "description_for_model": "Assistant uses Flow Plugin to generate new Flows. If the prompt contains words 'create', 'generate' and 'Flow', assistant can use this plugin to understand what example Flows are. This plugin provides the assistant sample flows that the assistant can use to generate new Flows. Use the retrieved sample flow as a template to generate the new flow based on the user input.",
+  "description_for_human": "Helps you generate new flows - v12",
   "auth": {
     "type": "none"
   },

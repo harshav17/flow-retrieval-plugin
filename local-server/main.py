@@ -41,6 +41,7 @@ app.add_middleware(
 
 @app.route("/.well-known/ai-plugin.json")
 async def get_manifest(request):
+    print("loading ai-plugin")
     file_path = "./local-server/ai-plugin.json"
     return FileResponse(file_path, media_type="text/json")
 
@@ -102,9 +103,11 @@ async def upsert(
 @app.post("/query", response_model=QueryResponse)
 async def query_main(request: QueryRequest = Body(...)):
     try:
+        print("before query")
         results = await datastore.query(
             request.queries,
         )
+        print("after query")
         return QueryResponse(results=results)
     except Exception as e:
         print("Error:", e)

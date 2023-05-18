@@ -27,7 +27,9 @@ assert BEARER_TOKEN is not None
 
 
 def validate_token(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)):
+    print("is it getting inside validate token")
     if credentials.scheme != "Bearer" or credentials.credentials != BEARER_TOKEN:
+        print("is it raising exception")
         raise HTTPException(status_code=401, detail="Invalid or missing token")
     return credentials
 
@@ -96,9 +98,11 @@ async def query_main(
     request: QueryRequest = Body(...),
 ):
     try:
+        print("before query")
         results = await datastore.query(
             request.queries,
         )
+        print("successful query")
         return QueryResponse(results=results)
     except Exception as e:
         print("Error:", e)
